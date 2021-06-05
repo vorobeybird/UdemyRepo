@@ -37,7 +37,16 @@ function startCheck() {
     numberOfFilms = +prompt("Сколько фильмов уже посмотрели?", "2");
   }
 }
+
 startCheck();
+
+function showMyDB (hidden){
+  if (!hidden){
+    console.log(personaMovieDB);
+  }
+}
+
+showMyDB(personaMovieDB.privat);
 
 function fillInfo() {
   for (let i = 0; i < 2; i++) {
@@ -47,7 +56,7 @@ function fillInfo() {
       console.log("Error");
       i--;
     } else {
-        console.log("Added");
+      console.log("Added");
       personaMovieDB.movies[a] = b;
     }
   }
@@ -56,12 +65,10 @@ function fillInfo() {
 fillInfo();
 console.log(personaMovieDB);
 
-function writeYourGenres(){
-    for(let i=1;i<4;i++){
-        let genreName = prompt(`Ваш любимый жанр под номером ${i}`)
-        personaMovieDB.genres[i-1] = genreName;
-        
-    }
+function writeYourGenres() {
+  for (let i = 1; i < 4; i++) {
+    personaMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`)
+  }
 }
 
 writeYourGenres();
