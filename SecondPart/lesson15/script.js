@@ -19,29 +19,13 @@ let numberOfFilms = +prompt("Сколько фильмов уже посмотр
 
 console.log(typeof(numberOfFilms));
 
-switch(numberOfFilms){
-    case numberOfFilms < 10:
-        alert("Просмотрено довольно мало фильмов");
-        break;
-    case(numberOfFilms < 30):
-        alert("Вы классический зритель");
-        break;
-    case(numberOfFilms >= 30):
-        alert("Вы киноман");
-        break;
-    default:
-        alert("Error occured");
-        break;
-
-
-}
-// const personaMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   privat: false,
-// };
+const personaMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
 // let result = Object.entries(personaMovieDB.movies)[0];
 
