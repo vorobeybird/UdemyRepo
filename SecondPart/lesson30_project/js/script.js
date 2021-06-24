@@ -12,15 +12,55 @@
 
 5) Добавить нумерацию выведенных фильмов */
 
-'use strict';
+"use strict";
 
 const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
+  movies: [
+    "Логан",
+    "Лига справедливости",
+    "Ла-ла лэнд",
+    "Одержимость",
+    "Скотт Пилигрим против...",
+    "Какой-то фильм номер 6",
+  ],
 };
 
+// document.querySelector(".promo__adv").remove();
+
+// const genre = document.querySelector(".promo__genre");
+// // console.log(genre);
+
+// genre.innerHTML = "ДРАМА";
+
+// const promoInteractive = document.querySelector(".promo__interactive-list");
+
+// console.log(promoInteractive);
+
+// for(let i = 0; i < movieDB.movies.length; i++){
+//     promoInteractive.insertAdjacentHTML(
+//         "beforeend",`<li class="promo__interactive-item">${i+1} ${movieDB.movies[i]} </li>`
+//       );
+//     }
+
+const adv = document.querySelectorAll(".promo__adv img"),
+      poster = document.querySelector(".promo__bg"),
+      genre = poster.querySelector(".promo__genre"),
+      movieList = document.querySelector('.promo__interactive-list');
+
+adv.forEach((elem) => {
+  elem.remove();
+});
+
+genre.textContent = 'драма';
+
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+
+movieList.innerHTML = "";
+
+movieDB.movies.sort();
+
+movieDB.movies.forEach((film, i) =>{
+    movieList.innerHTML += `
+    <li class="promo__interactive-item">${i+1} ${film} </li>
+    `;
+});
