@@ -49,4 +49,4 @@ wrapper.before(div);
 // // div.textContent = "Hello wdddorld"; //не поддерживает HTML структуру, для защиты от пользователя
 // wrapper.append(div);
 
-// div.insertAdjacentHTML("beforebegin", '<h1> Hello </h1>');
+div.insertAdjacentHTML("", '<h1> Hello </h1>');
