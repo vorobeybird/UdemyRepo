@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="one">
+    <p>"Pleade add some text"</p>
+  <div class="two">
+    <div class="three">
+    </div>
+  </div>
+</div>
+<script>
+  const divs = document.querySelectorAll('div');  
+  function logClassName(event) {
+    console.log(this.classList.value);
+  }
+  divs.forEach(div => div.addEventListener('click', logClassName));
+</script>
+</body>
+</html>
