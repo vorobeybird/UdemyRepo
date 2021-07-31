@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // function showThis(a,b){
 //     console.log(this);
@@ -62,14 +62,52 @@
 //     this.style.color = "red";
 // })
 
-const obj = {
-    num:5,
-    sayNumber: function(){
-        const say = () =>{
-            console.log(this);
-        };
-        say();
-    }
+// const obj = {
+//     num:5,
+//     sayNumber: function(){
+//         const say = () =>{ //Стрелочная функция не имеет своего this, она всегда берёт контекст у родителя, а у метода всегода контекст ссылается на объект
+//             console.log(this);
+//         };
+//         say();
+//     }
+// };
+
+// obj.sayNumber();
+
+// //если тело функци влезает в одну строку, можно вынести стрелочную функцию следующим образом, и если лямбда функция получает один аргумент, скобки не нужны
+
+// const double = a => a*2;
+
+// const multiple = (a,b) => a*b;
+
+// console.log(double(5));
+// console.log(multiple(3,6));
+
+
+// function execute() {  
+//     function concat(str1, str2) {
+//       // the strict mode is enabled too
+//       console.log(this === undefined); // => true
+//       return str1 + str2;
+//     }
+//     // concat() is invoked as a function in strict mode
+//     // this in concat() is undefined
+//     console.log(concat('Hello', ' World!'));
+//  }
+ 
+//  execute();
+
+
+//проверка добавления в глобальный объект
+
+function sum(x){
+    this.x = x;
+    this.y = 20;
+    console.log(`This is ${this}`);
+    return this.x + this.y;
+
 }
 
-obj.sayNumber()
+console.log(sum(5,6));
+
+console.log(window.y);
