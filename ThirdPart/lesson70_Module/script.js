@@ -14,8 +14,14 @@ let number = 1;
 
 console.log(number);
 
-function make(){
-    console.log(number,'check it');
-    let number = 3;
-}
-
+// создание объектного интерфейса
+const user = (function(){
+    const privat = function(){
+        console.log('im privat')
+    };
+    return {
+        sayHello: privat
+    };
+}());
+// наша анонимная функция создаёт объект и экспротирует только те методы, которые нам будут нужны снаружи
+user.sayHello();

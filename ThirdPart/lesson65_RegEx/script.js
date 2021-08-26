@@ -23,10 +23,21 @@ const reg = /\d/ig;
 // Классы в регулярных выражениях
 // \d - цифры (digit), \w - буквы(words), \s - пробелы(spases)
 
-const str = 'My name is R2d2';
+const str = '10 BYN to RUB ';
 
-console.log(str.match(/\D\S/g));
+const values = str.match(/(\d+)/g);
+// const values = str.match(/[A-Z]+/g);
+const names = str.match(/\b[A-Z]{3}/g);
 
+const result = {};
+names.forEach((key, i) => result[key] = values[i]);
+
+for(let prop in result){
+    if(result[prop] === undefined){
+        result[prop] = 1;
+    }
+}
+console.log(result);
 //Обратные классы
 
 /*
