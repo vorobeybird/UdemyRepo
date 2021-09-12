@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.test-div {
+  width: 100%;
+  height: 20px;
+  background-color: black;
+}
+
+.test-span {
+  width: 100%;
+  height: 20px;
+  background-color: green;
+}
